@@ -64,11 +64,13 @@ const loginUser = async (req, res) => {
     if (!email || !password)
       return res.status(400).json({ msg: "please enter all required fields" });
 
+    // check if user already exists in database
     const existingUser = await User.findOne({ email });
 
     if (!existingUser)
       return res.status(401).json({ msg: "Wrong email or password" });
 
+    // check if password is the same as decrypted password
     const hashedPassword = await bcrypt.compare(
       password,
       existingUser.password
@@ -93,6 +95,7 @@ const loginUser = async (req, res) => {
   }
 };
 
+//logout the user
 const logoutUser = (req, res) => {
   try {
     res.cookie("token", "", { httpOnly: true, expires: new Date(0) }).send();
