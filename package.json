@@ -1,0 +1,20 @@
+{
+  "name": "mern-secure-auth",
+  "version": "1.0.0",
+  "description": "Full-Stack Template using MERN Stack, Redux, and Material-UI",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm start --prefix client",
+    "server": "npm run dev --prefix server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jomark031497/mern-auth.git"
+  },
+  "author": "Jomark Pangan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jomark031497/mern-auth/issues"
+  },
+  "homepage": "https://github.com/Jomark031497/mern-auth#readme"
+}
