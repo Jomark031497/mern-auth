@@ -88,7 +88,9 @@ const loginUser = async (req, res) => {
     );
 
     // send the token in cookie
-    res.cookie("token", token, { httpOnly: true }).send();
+    res
+      .cookie("token", token, { httpOnly: true })
+      .json({ user: existingUser.email });
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
